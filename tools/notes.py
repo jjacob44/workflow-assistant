@@ -4,10 +4,10 @@ class NotesTool:
     def __init__(self, notes_dir):
         self.notes_dir = Path(notes_dir)
 
-    def list_notes(self):
+    def list_notes(self) -> dict:
         return {'success': True, 'content': [note.name for note in self.notes_dir.glob("*.md")]}
     
-    def read_note(self, note_name):
+    def read_note(self, note_name: str) -> dict:
         note_path = self.notes_dir / note_name
 
         if not note_path.exists():
@@ -26,7 +26,7 @@ class NotesTool:
             }
         
         
-    def search_notes(self, substring):
+    def search_notes(self, substring: str) -> dict:
         list_of_files_containing_substring = []
 
         for note in self.notes_dir.glob("*.md"):

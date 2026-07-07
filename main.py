@@ -2,7 +2,10 @@ from pydantic_ai import Agent
 from tools.notes import NotesTool
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 def main():
+    load_dotenv()
     project_root = Path(__file__).resolve().parent
     notes_dir = project_root / "notes"
     notes_tool = NotesTool(notes_dir)
@@ -13,7 +16,7 @@ def main():
     )
 
     results = agent.run_sync('Which notes do I have?')
-    print(results)
-    
+    print(results.output)
+
 if __name__ == '__main__':
     main()
