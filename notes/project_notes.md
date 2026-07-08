@@ -1,0 +1,1 @@
+The workflow assistant project uses Pydantic AI and local note tools.

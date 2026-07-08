@@ -1,0 +1,1 @@
+I am learning AI agents, tool calling, and MCP.
